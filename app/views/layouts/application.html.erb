@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Zenkou Chokin App" %></title>
+    <title><%= content_for(:title) || "善行貯金" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -17,7 +17,23 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column min-vh-100">
+    <%= render 'shared/header' %>
+    
+    <main class="flex-grow-1">
+      <div class="my-2 ms-4">
+        <h2>今日の名言</h2>
+      </div>
+      <div class="text-center">
+        <h4>きみは明日のきみに、今日を誇れるだろうか。</h4>
+        <h5>～あつまれどうぶつの森 らこすけ～</h5>
+      </div>
+      <div class="ms-auto">
+        <p class="text-end">ソート機能実装部分</p>
+      </div>
+      <%= yield %>
+    </main>
+    
+    <%= render 'shared/footer' %>
   </body>
 </html>
