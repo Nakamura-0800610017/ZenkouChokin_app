@@ -18,7 +18,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: zenkou_chokin_app # compose.ymlで定義したサービス名
+  host: db # compose.ymlで定義したサービス名
   username: postgres
   password: password
 
