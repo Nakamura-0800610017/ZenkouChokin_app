@@ -4,11 +4,11 @@
       <%= link_to '/', class: 'navbar-brand ms-auto' do %>
         <%= image_tag 'main_image.png', width: 153 %>
       <% end %>
-      <span class="ms-2 lead">
+      <span class="ms-2 lead fw-bold">
         ~日常を見直す週間管理アプリ~
       </span>
     </div>
-    <div class="ms-auto">
+    <div class="ms-auto fw-bold">
       <ul class="navbar-nav" style="flex-direction: row;">
         <li class="nav-item px-2">
           <a class="navlink" href="#">使い方</a>
@@ -20,7 +20,7 @@
           <a class="navlink" href="#">投稿</a>
         </li>
         <li class="nav-item px-2">
-          <a class="navlink" href="#">ログイン</a>
+          <%= link_to 'ログイン', login_path, class: "nav-link" %>
         </li>
       </ul>
     </div>
