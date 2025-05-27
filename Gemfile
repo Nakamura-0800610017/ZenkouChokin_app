@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # 認証
-gem "sorcery", "0.16.5"
+gem "sorcery", "0.17.0"
 
 # 多言語化
 gem "rails-i18n", "~> 7.0", ">= 7.0.10"
