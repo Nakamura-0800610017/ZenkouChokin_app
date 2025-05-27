@@ -11,11 +11,12 @@ ja:
     new:
       title: ログイン
       login: ログイン
-      to_register_page: 登録ページへ
-      password_forget: パスワードをお忘れの方はこちら
+      to_register_page: 新規登録ページへ
+      password_forget: パスワードを忘れた方
   users:
     new:
-      title: ユーザー登録
+      title: 新規登録
+      create: 新規登録
       to_login_page: ログインページへ
   header:
     login: ログイン
@@ -24,3 +25,6 @@ ja:
     ranking: ランキング
     post: 投稿
     my_page: マイページ
+  footer:
+    privacy_policy: プライバシーポリシー
+    contact: お問い合わせ

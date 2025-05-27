@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-lg-5 mx-auto">
-      <h1>新規登録</h1>
+      <h1><%= t('users.new.title') %></h1>
       <%= form_with model: @user do |f| %>
         <div class="mb-3">
           <%= f.label :user_name, class: "form-label" %>
@@ -20,8 +20,8 @@
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
         <div class="d-flex flex-column w-75 mx-auto gap-2">
-          <%= f.submit "新規登録", class: "btn btn-primary" %>
-          <%= link_to "ログインページへ",  login_path, class: "btn btn-primary" %>
+          <%= f.submit t('users.new.create'), class: "btn btn-primary" %>
+          <%= link_to t('users.new.to_login_page'),  login_path, class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>

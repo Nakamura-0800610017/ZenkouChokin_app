@@ -1,4 +1,14 @@
-<footer class="custom-header text-center py-3 mt-5">
-  <a href="#" class="text-dark mx-3">プライバシーポリシー</a>
-  <a href="#" class="text-dark mx-3">お問い合わせ</a>
+<footer>
+  <nav class="navbar navbar-expand-lg navbar-light custom-header">
+    <div class="mx-auto fw-bold">
+      <ul class="navbar-nav" style="flex-direction: row;">
+        <li class="nav-item px-4">
+          <%= link_to t('footer.privacy_policy'), '#', class: "nav-link" %>
+        </li>
+        <li class="nav-item px-4">
+          <%= link_to t('footer.contact'), '#', class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </footer>
