@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: [ :index ]
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.where(post_type: :zenkou).order(created_at: :desc)
   end
 
 def new_zenkou
@@ -23,15 +23,6 @@ end
       render :new, status: :unprocessable_entity
     end
   end
-
-  def point_select
-    @post = Post.new(post_params)
-    render turbo_stream: turbo_stream.replace(
-    "point_select",
-    partial: "posts/point_select",
-    locals: { post: @post }
-  )
-end
 
   private
 
