@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :users, only: %i[new create]
-  resources :posts
+  resources :posts do
+    collection do
+      get :new_zenkou
+      get :new_akugyou
+    end
+  end
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
   delete "logout", to: "user_sessions#destroy"

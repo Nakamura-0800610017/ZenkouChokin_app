@@ -25,6 +25,15 @@ ja:
     ranking: ランキング
     post: 投稿
     my_page: マイページ
+    post_zenkou: 『善行』を投稿する
+    post_akugyou: 『悪行』を投稿する
   footer:
     privacy_policy: プライバシーポリシー
     contact: お問い合わせ
+  posts:
+    new:
+      title: 『行い』を投稿
+      body: 内容
+      post_type: 種類
+      point: 善行ポイント
+      post: 投稿

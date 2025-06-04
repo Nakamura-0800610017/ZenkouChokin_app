@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-5 mx-auto">
+      <h1><%= t('posts.new.title') %></h1>
+        <%= form_with model: @post, class: "new_post" do |f| %>
+          <div class="mb-3">
+            <%= f.label :post_type, class: "form-label" %>
+            <%= select_tag :post_type,
+                    options_for_select([["善行", "zenkou"], ["悪行", "akugyou"]], @post.post_type),
+                    class: "form-select", disabled: true %>
+            <%= f.hidden_field :post_type %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :body, class: "form-label" %>
+            <%= f.text_area :body, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :point, class: "form-label" %>
+            <%= f.select :point, @post.post_type == "akugyou" ? (-10..-1).to_a.reverse : (1..10).to_a,
+                class: "form-select" %>
+          </div>
+          <div class="d-flex flex-column mx-auto gap-2">
+            <%= f.submit t('posts.new.post'), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

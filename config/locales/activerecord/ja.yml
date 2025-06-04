@@ -8,3 +8,7 @@ ja:
         user_name: ユーザーネーム
         password: パスワード
         password_confirmation: パスワード確認
+      post:
+        body: 内容
+        post_type: 種類
+        point: 善行ポイント
