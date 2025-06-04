@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :posts do
     collection do
-      post :point_select
+      get :new_zenkou
+      get :new_akugyou
     end
   end
   get "login", to: "user_sessions#new"
