@@ -7,7 +7,21 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+  default:
+    delete_confirm: 本当に削除しますか？
+    flash_message:
+      updated: 更新しました
+      not_updated: 更新に失敗しました
+      created: "%{item}を作成しました"
+      not_created: "%{item}の作成に失敗しました"
+      deleted: "%{item}を削除しました"
+      require_login: ログインしてください
   user_sessions:
+    create:
+      success: ログインしました
+      failed: ログインに失敗しました
+    destroy:
+      success: ログアウトしました
     new:
       title: ログイン
       login: ログイン
@@ -37,3 +51,7 @@ ja:
       post_type: 種類
       point: 善行ポイント
       post: 投稿
+    edit:
+      title: 投稿を編集
+      update: 更新
+      delete: 削除
