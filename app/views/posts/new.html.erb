@@ -19,8 +19,8 @@
             <%= f.select :point, @post.post_type == "akugyou" ? (-10..-1).to_a.reverse : (1..10).to_a,
                 class: "form-select" %>
           </div>
-          <div class="d-flex flex-column mx-auto gap-2">
-            <%= f.submit t('posts.new.post'), class: "btn btn-primary" %>
+          <div class="d-flex gap-2">
+            <%= f.submit t('posts.new.post'), class: "btn btn-primary ms-auto" %>
           </div>
         <% end %>
     </div>
