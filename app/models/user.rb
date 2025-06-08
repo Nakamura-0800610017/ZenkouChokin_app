@@ -7,8 +7,17 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :posts, dependent: :destroy
+  has_one :user_point, dependent: :destroy
+
+  after_create :create_user_point
 
   def own?(object)
     id == object&.user_id
+  end
+
+  private
+
+  def create_user_point
+    create_user_point(total_points: 0, user_rank: 0)
   end
 end
