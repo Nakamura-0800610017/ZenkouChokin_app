@@ -16,6 +16,17 @@ ja:
       not_created: "%{item}の作成に失敗しました"
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
+    user_rank:
+      nomal: 一般人
+      danka: 檀家
+      syugyousou: 修行僧
+      souryo: 僧侶
+      ajari: 阿闍梨
+      arakan: 阿羅漢
+      ten: 天
+      myouou: 明王
+      bosatsu: 菩薩
+      daibutu: 大仏
   user_sessions:
     create:
       success: ログインしました
