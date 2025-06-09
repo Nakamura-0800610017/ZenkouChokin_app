@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-5 mx-auto">
+      <h1><%= t('users.edit.title') %></h1>
+        <%= form_with model: @user, class: "edit_user" do |f| %>
+          <div class="mb-3">
+            <%= f.label :user_name, class: "form-label" %>
+            <%= f.text_field :user_name, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, class: "form-control" %>
+          </div>
+          <div class="d-flex gap-2">
+            <%= f.submit t('users.edit.update'), class: "btn btn-primary ms-auto" %>
+            <%= link_to t('.delete'), user_path(@user),
+                data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') },class: "btn btn-danger" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
