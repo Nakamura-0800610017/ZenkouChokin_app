@@ -10,12 +10,23 @@ ja:
   default:
     delete_confirm: 本当に削除しますか？
     flash_message:
-      updated: 更新しました
-      not_updated: 更新に失敗しました
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}の更新に失敗しました"
       created: "%{item}を作成しました"
       not_created: "%{item}の作成に失敗しました"
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
+    user_rank:
+      nomal: 一般人
+      danka: 檀家
+      syugyousou: 修行僧
+      souryo: 僧侶
+      ajari: 阿闍梨
+      arakan: 阿羅漢
+      ten: 天
+      myouou: 明王
+      bosatsu: 菩薩
+      daibutu: 大仏
   user_sessions:
     create:
       success: ログインしました
@@ -32,6 +43,12 @@ ja:
       title: 新規登録
       create: 新規登録
       to_login_page: ログインページへ
+    edit:
+      title: ユーザー編集
+      update: 更新
+      delete: アカウント削除
+    show:
+      title: マイページ
   header:
     login: ログイン
     logout: ログアウト

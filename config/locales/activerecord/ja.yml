@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       post: 投稿
+      user_point: ユーザーポイント
     attributes:
       user:
         email: メールアドレス
@@ -13,3 +14,16 @@ ja:
         body: 内容
         post_type: 種類
         point: 善行ポイント
+      user_point:
+        total_points: 合計善行ポイント
+        user_rank:
+          nomal: 一般人
+          danka: 檀家
+          shugyousou: 修行僧
+          souryo: 僧侶
+          ajari: 阿闍梨
+          arakan: 阿羅漢
+          ten: 天
+          myouou: 明王
+          bosatsu: 菩薩
+          daibutsu: 大仏

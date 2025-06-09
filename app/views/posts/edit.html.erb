@@ -22,7 +22,7 @@
           <div class="d-flex gap-2">
             <%= f.submit t('posts.edit.update'), class: "btn btn-primary ms-auto" %>
             <%= link_to t('.delete'), post_path(@post),id: "button-delete-#{@post.id}",
-                data: { turbo_method: :delete, turbo_confirm: t('defaults.delete_confirm') },class: "btn btn-danger" %>
+                data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') },class: "btn btn-danger" %>
           </div>
         <% end %>
     </div>

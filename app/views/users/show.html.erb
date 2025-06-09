@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="text-center">
+    <h1><%= t('users.show.title') %></h1>
+    <%= image_tag "#{@user_point.user_rank}.png", alt: t("default.user_rank.#{@user_point.user_rank}"), height: 300,weight: 300,class: "mx-auto d-block mb-4" %>
+    <div class="d-flex justify-content-center align-items-center gap-1 mb-3">
+      <h3 class="mb-0"><%= @user.user_name %></h3>
+      <%= link_to edit_user_path(@user) do %>
+        <i class="bi bi-pencil-fill"></i>
+      <% end %>
+    </div>
+    <h3>ユーザーランク:<%= t("default.user_rank.#{@user_rank}") %></h3>
+    <h3>ユーザーポイント:<%= @user_point.total_points %></h3>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h4 class="text-center">善行一覧</h4>
+      <table class="table table-bordered table-striped table-sm">
+        <thead>
+          <tr>
+            <th>内容</th>
+            <th>善行ポイント</th>
+            <th>編集・削除</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @zenkou.each do |post| %>
+            <tr>
+              <td class="text-truncate" style="max-width: 300px;"><%= post.body %></td>
+              <td><%= post.point %></td>
+              <td>
+                <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
+                  <i class="bi bi-pencil-fill"></i>
+                <% end %>
+                <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') } do %>
+                  <i class="bi bi-trash-fill"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">悪行一覧</h4>
+      <table class="table table-bordered table-striped table-sm">
+        <thead>
+          <tr>
+            <th>内容</th>
+            <th>善行ポイント</th>
+            <th>編集・削除</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @akugyou.each do |post| %>
+            <tr>
+              <td class="text-truncate" style="max-width: 300px;"><%= post.body %></td>
+              <td><%= post.point %></td>
+              <td>
+                <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
+                  <i class="bi bi-pencil-fill"></i>
+                <% end %>
+                <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') } do %>
+                  <i class="bi bi-trash-fill"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
