@@ -10,8 +10,8 @@ ja:
   default:
     delete_confirm: 本当に削除しますか？
     flash_message:
-      updated: 更新しました
-      not_updated: 更新に失敗しました
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}の更新に失敗しました"
       created: "%{item}を作成しました"
       not_created: "%{item}の作成に失敗しました"
       deleted: "%{item}を削除しました"
@@ -43,6 +43,12 @@ ja:
       title: 新規登録
       create: 新規登録
       to_login_page: ログインページへ
+    edit:
+      title: ユーザー編集
+      update: 更新
+      delete: アカウント削除
+    show:
+      title: マイページ
   header:
     login: ログイン
     logout: ログアウト
