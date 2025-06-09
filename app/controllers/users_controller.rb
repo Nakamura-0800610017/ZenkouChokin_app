@@ -18,6 +18,9 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @user_point = @user.user_point
+    @user_rank = @user_point.user_rank
+    @zenkou = @user.posts.zenkou.order(created_at: :desc)
+    @akugyou = @user.posts.akugyou.order(created_at: :desc)
   end
 
   def edit
@@ -27,7 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to root_path, success: t("default.flash_message.updated", item: User.model_name.human)
+      redirect_to user_path(@user), success: t("default.flash_message.updated", item: User.model_name.human)
     else
       flash.now[:danger] = t("default.flash_message.not_updated", item: User.model_name.human)
       render :edit, status: :unprocessable_entity
