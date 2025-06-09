@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   private
 
   def update_total_points
-    user_point = user.user_point || user.create_user_point # 検証用アカウントを削除したら消しても良い
+    user_point = user.user_point || user.create_user_point_record # 検証用アカウントを削除したら消しても良い
     user_point.total_points = user.posts.sum(:point)
     user_point.update_rank!
   end

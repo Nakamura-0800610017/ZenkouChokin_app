@@ -8,7 +8,7 @@ class UserPoint < ApplicationRecord
                 [ :ten, 3000 ], [ :myouou, 5000 ], [ :bosatu, 7500 ], [ :daibutu, 10000 ] ].freeze
 
   def update_rank!
-    array = array_border_point.reverse
+    array = BORDER_POINT.reverse
     array.each do |rank, point|
       if total_points >= point
         self.user_rank = rank
