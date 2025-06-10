@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @user_point = @user.user_point
-    @user_rank = @user_point.user_rank
+    @total_points = @user_point.total_points.round
     @zenkou = @user.posts.zenkou.order(created_at: :desc)
     @akugyou = @user.posts.akugyou.order(created_at: :desc)
   end
