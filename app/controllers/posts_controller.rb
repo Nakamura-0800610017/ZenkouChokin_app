@@ -44,6 +44,10 @@ end
     redirect_to root_path, success: t("default.flash_message.deleted", item: Post.model_name.human), status: :see_other
   end
 
+  def bookmarks
+    @bookmark_posts = current_user.bookmark_posts.order(created_at: :desc)
+  end
+
   private
 
   def post_params
