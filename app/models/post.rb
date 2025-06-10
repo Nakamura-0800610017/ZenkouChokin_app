@@ -6,15 +6,12 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
 
-  after_create :update_total_points
-  after_destroy :update_total_points
+  after_create :update_post_points
+  after_destroy :update_post_points
 
   private
 
-  def update_total_points
-    user_point = user.user_point || user.create_user_point_record # 検証用アカウントを削除したら消しても良い
-    user_point.total_points = user.posts.sum(:point)
-    user_point.update_rank!
-    user_point.save!
+  def update_post_points
+    user.user_point.update_total_points!
   end
 end
