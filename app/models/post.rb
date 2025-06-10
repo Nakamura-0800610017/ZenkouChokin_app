@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   enum post_type: { zenkou: 0, akugyou: 1 }
 
   belongs_to :user
+  has_many :bookmarks, dependent: :destroy
 
   after_create :update_total_points
   after_destroy :update_total_points
