@@ -8,8 +8,8 @@
         <i class="bi bi-pencil-fill"></i>
       <% end %>
     </div>
-    <h3>ユーザーランク:<%= t("default.user_rank.#{@user_rank}") %></h3>
-    <h3>ユーザーポイント:<%= @user_point.total_points %></h3>
+    <h3>ユーザーランク:<%= t("default.user_rank.#{@user_point.user_rank}") %></h3>
+    <h3>合計善行ポイント:<%= @total_points %></h3>
   </div>
 <div class="container">
   <div class="row">

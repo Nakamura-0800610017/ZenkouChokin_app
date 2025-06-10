@@ -17,8 +17,10 @@ Rails.application.routes.draw do
     collection do
       get :new_zenkou
       get :new_akugyou
+      get :bookmarks
     end
   end
+  resources :bookmarks, only: %i[create destroy]
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
   delete "logout", to: "user_sessions#destroy"

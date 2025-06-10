@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :posts, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_posts, through: :bookmarks, source: :post
   has_one :user_point, dependent: :destroy
 
   after_create :create_user_point_record
@@ -18,4 +20,16 @@ class User < ApplicationRecord
   def create_user_point_record
     create_user_point(total_points: 0, user_rank: 0)
   end
+
+  def bookmark(post)
+  bookmark_posts << post
+end
+
+def unbookmark(post)
+  bookmark_posts.destroy(post)
+end
+
+def bookmark?(post)
+  bookmark_posts.include?(post)
+end
 end

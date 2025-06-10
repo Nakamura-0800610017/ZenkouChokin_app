@@ -7,6 +7,14 @@ class UserPoint < ApplicationRecord
   BORDER_POINT = [ [ :danka, 25 ], [ :syugyousou, 150 ], [ :souryo, 400 ], [ :ajyari, 800 ], [ :arakan, 1500 ],
                 [ :ten, 3000 ], [ :myouou, 5000 ], [ :bosatu, 7500 ], [ :daibutu, 10000 ] ].freeze
 
+  def update_total_points!
+    post_points = user.posts.sum(:point)
+    bookmark_bonus = Bookmark.joins(:post).where(posts: { user_id: user.id }).sum("posts.point * 0.1")
+    self.total_points = post_points + bookmark_bonus
+    update_rank!
+    save!
+  end
+
   def update_rank!
     array = BORDER_POINT.reverse
     array.each do |rank, point|

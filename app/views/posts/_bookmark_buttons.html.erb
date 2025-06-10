@@ -1,0 +1,13 @@
+<% if current_user.present? %>
+  <div class='ms-auto'>
+    <% if current_user.bookmark?(post) %>
+      <%= render 'unbookmark', { post: post } %>
+    <% else %>
+      <%= render 'bookmark', { post: post } %>
+    <% end %>
+  </div>
+<% else %>
+  <div class='ms-auto'>
+    <i class="bi bi-hand-thumbs-up"></i>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: [ :index ]
   def index
-    @posts = Post.where(post_type: :zenkou).order(created_at: :desc)
+    @posts = Post.where(post_type: :zenkou).order(created_at: :desc).includes(user: :user_point)
   end
 
 def new_zenkou
@@ -42,6 +42,10 @@ end
     post = current_user.posts.find(params[:id])
     post.destroy!
     redirect_to root_path, success: t("default.flash_message.deleted", item: Post.model_name.human), status: :see_other
+  end
+
+  def bookmarks
+    @bookmark_posts = current_user.bookmark_posts.order(created_at: :desc)
   end
 
   private

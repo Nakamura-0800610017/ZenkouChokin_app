@@ -5,9 +5,10 @@
         <p class="card-text"><%= post.body %></p>
       </div>
       <div class="d-flex align-items-center p-1">
-        <div><i class="bi bi-person-fill"></i></div>
+        <div><%= image_tag "#{post.user.user_point.user_rank}.png", alt: t("default.user_rank.#{post.user.user_point.user_rank}"),
+                height: 50,weight: 50,class: "mx-auto d-block" %></div>
         <div class="ms-2"><%= post.user.user_name %></div>
-        <div class="ms-auto">ユーザーランク表示部</div>
+        <div class="ms-auto me-1"><%= t("default.user_rank.#{post.user.user_point.user_rank}") %></div>
       </div>
       <% if current_user&.own?(post) %>
         <div class="ms-auto p-1">
@@ -19,9 +20,7 @@
           <% end %>
         </div>
       <% else %>
-        <div class="ms-auto me-1 p-1">
-          <i class="bi bi-star"></i>
-        </div>
+        <%= render 'bookmark_buttons', { post: post } %>
       <% end %>
     </div>
   </div>
