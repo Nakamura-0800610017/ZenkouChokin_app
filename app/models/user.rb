@@ -20,4 +20,16 @@ class User < ApplicationRecord
   def create_user_point_record
     create_user_point(total_points: 0, user_rank: 0)
   end
+
+  def bookmark(post)
+  bookmark_posts << post
+end
+
+def unbookmark(post)
+  bookmark_posts.destroy(post)
+end
+
+def bookmark?(post)
+  bookmark_posts.include?(post)
+end
 end
