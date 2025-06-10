@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: [ :index ]
   def index
-    @posts = Post.where(post_type: :zenkou).order(created_at: :desc)
+    @posts = Post.where(post_type: :zenkou).order(created_at: :desc).includes(user: :user_point)
   end
 
 def new_zenkou
