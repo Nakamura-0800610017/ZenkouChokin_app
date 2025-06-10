@@ -20,9 +20,7 @@
           <% end %>
         </div>
       <% else %>
-        <div class="ms-auto me-1 p-1">
-          <i class="bi bi-star"></i>
-        </div>
+        <%= render 'bookmark_buttons', { post: post } %>
       <% end %>
     </div>
   </div>
