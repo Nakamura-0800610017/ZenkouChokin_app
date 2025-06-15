@@ -42,6 +42,9 @@ gem "sorcery", "0.16.5"
 # 多言語化
 gem "rails-i18n", "~> 7.0", ">= 7.0.10"
 
+# 検索機能
+gem "ransack", "~> 4.3"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
