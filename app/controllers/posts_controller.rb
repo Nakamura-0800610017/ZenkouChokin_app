@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: [ :index ]
   def index
-    @posts = Post.where(post_type: :zenkou).order(created_at: :desc).includes(user: :user_point)
+    @q = Post.includes(:user).where(post_type: :zenkou).order(created_at: :desc).ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
 def new_zenkou
@@ -45,7 +46,8 @@ end
   end
 
   def bookmarks
-    @bookmark_posts = current_user.bookmark_posts.order(created_at: :desc)
+    @q = current_user.bookmark_posts.includes(:user).order(created_at: :desc).ransack(params[:q])
+    @bookmark_posts = @q.result(distinct: true)
   end
 
   private

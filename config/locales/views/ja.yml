@@ -9,6 +9,7 @@ ja:
       password: パスワード
   default:
     delete_confirm: 本当に削除しますか？
+    no_items: 投稿がありません
     flash_message:
       updated: "%{item}を更新しました"
       not_updated: "%{item}の更新に失敗しました"
@@ -16,6 +17,10 @@ ja:
       not_created: "%{item}の作成に失敗しました"
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
+    search:
+      word: 本文
+      period_start: 投稿期間（開始）
+      periot_end: 投稿期間（終了）
     user_rank:
       nomal: 一般人
       danka: 檀家
@@ -34,7 +39,7 @@ ja:
     destroy:
       success: ログアウトしました
     new:
-      title: ログイン
+      title: ログイン情報入力
       login: ログイン
       to_register_page: 新規登録ページへ
       password_forget: パスワードを忘れた方
@@ -49,6 +54,13 @@ ja:
       delete: アカウント削除
     show:
       title: マイページ
+      user_rank: ユーザーランク
+      total_points: 合計善行ポイント
+      zenkou: 善行一覧
+      akugyou: 悪行一覧
+      body: 本文
+      point: 善行ポイント
+      edit_destroy: 編集・削除
   header:
     login: ログイン
     logout: ログアウト
@@ -65,7 +77,7 @@ ja:
   posts:
     new:
       title: 『行い』を投稿
-      body: 内容
+      body: 本文
       post_type: 種類
       point: 善行ポイント
       post: 投稿

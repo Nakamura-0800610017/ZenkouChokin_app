@@ -8,19 +8,19 @@
         <i class="bi bi-pencil-fill"></i>
       <% end %>
     </div>
-    <h3>ユーザーランク:<%= t("default.user_rank.#{@user_point.user_rank}") %></h3>
-    <h3>合計善行ポイント:<%= @total_points %></h3>
+    <h3><%= t("users.show.user_rank") %>:<%= t("default.user_rank.#{@user_point.user_rank}") %></h3>
+    <h3><%= t("users.show.total_points") %>:<%= @total_points %></h3>
   </div>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h4 class="text-center">善行一覧</h4>
+      <h4 class="text-center"><%= t("users.show.zenkou") %></h4>
       <table class="table table-bordered table-striped table-sm">
         <thead>
           <tr>
-            <th>内容</th>
-            <th>善行ポイント</th>
-            <th>編集・削除</th>
+            <th><%= t("users.show.body") %></th>
+            <th><%= t("users.show.point") %></th>
+            <th><%= t("users.show.edit_destroy") %></th>
           </tr>
         </thead>
         <tbody>
@@ -42,13 +42,13 @@
       </table>
     </div>
     <div class="col-md-6">
-      <h4 class="text-center">悪行一覧</h4>
+      <h4 class="text-center"><%= t("users.show.akugyou") %></h4>
       <table class="table table-bordered table-striped table-sm">
         <thead>
           <tr>
-            <th>内容</th>
-            <th>善行ポイント</th>
-            <th>編集・削除</th>
+            <th><%= t("users.show.body") %></th>
+            <th><%= t("users.show.point") %></th>
+            <th><%= t("users.show.edit_destroy") %></th>
           </tr>
         </thead>
         <tbody>
