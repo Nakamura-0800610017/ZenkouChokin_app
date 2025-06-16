@@ -1,11 +1,14 @@
 <div class="container pt-3">
   <div class="row">
     <div class="col-12">
+      <div class="ms-auto">
+        <%= render 'search_form', q: @q, url: bookmarks_posts_path %>
+      </div>
       <div class="row">
         <% if @bookmark_posts.present? %>
           <%= render @bookmark_posts %>
         <% else %>
-          <div class="mb-3">投稿がありません</div>
+          <div class="mb-3"><%= t("default.no_items") %></div>
         <% end %>
       </div>
     </div>

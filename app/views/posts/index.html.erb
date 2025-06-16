@@ -1,6 +1,6 @@
 <div class="container pt-3">
   <div class="ms-auto">
-    <p class="text-end">ソート機能実装部分</p>
+    <%= render 'search_form', q: @q, url: posts_path %>
   </div>
   <div class="row">
     <div class="col-12">
@@ -8,7 +8,7 @@
         <% if @posts.present? %>
           <%= render @posts %>
         <% else %>
-          <div class="mb-3">掲示板がありません</div>
+          <div class="mb-3"><%= t("default.no_items") %></div>
         <% end %>
       </div>
     </div>
