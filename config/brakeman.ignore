@@ -1,0 +1,73 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "33f7d8dc1ba949ac24a8198dbc6cf4fb2aa399516069a9b56f726ea1024b35aa",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/posts/bookmarks.html.erb",
+      "line": 9,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => current_user.bookmark_posts.includes(:user).order(:created_at => :desc).ransack(params[:q]).result(:distinct => true), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "PostsController",
+          "method": "bookmarks",
+          "line": 51,
+          "file": "app/controllers/posts_controller.rb",
+          "rendered": {
+            "name": "posts/bookmarks",
+            "file": "app/views/posts/bookmarks.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "posts/bookmarks"
+      },
+      "user_input": "params[:q]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    },
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "3c4df737cab564b2b83510c0bb275b4721441834b1b24756f31d480e7f5d917c",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/views/posts/index.html.erb",
+      "line": 9,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => Post.includes(:user).where(:post_type => :zenkou).order(:created_at => :desc).ransack(params[:q]).result(:distinct => true), {})",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "PostsController",
+          "method": "index",
+          "line": 6,
+          "file": "app/controllers/posts_controller.rb",
+          "rendered": {
+            "name": "posts/index",
+            "file": "app/views/posts/index.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "posts/index"
+      },
+      "user_input": "params[:q]",
+      "confidence": "Weak",
+      "cwe_id": [
+        22
+      ],
+      "note": ""
+    }
+  ],
+  "brakeman_version": "7.0.2"
+}
