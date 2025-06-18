@@ -7,6 +7,9 @@
       <div class="row">
         <% if @bookmark_posts.present? %>
           <%= render @bookmark_posts %>
+          <div class="ms-auto">
+            <%= paginate @bookmark_posts, theme: 'bootstrap-5' %>
+          </div>
         <% else %>
           <div class="mb-3"><%= t("default.no_items") %></div>
         <% end %>
