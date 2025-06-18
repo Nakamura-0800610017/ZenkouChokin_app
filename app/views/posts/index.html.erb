@@ -7,6 +7,9 @@
       <div class="row">
         <% if @posts.present? %>
           <%= render @posts %>
+          <div class="d-flex justify-content-end">
+            <%= paginate @posts, theme: 'bootstrap-5' %>
+          </div>
         <% else %>
           <div class="mb-3"><%= t("default.no_items") %></div>
         <% end %>
