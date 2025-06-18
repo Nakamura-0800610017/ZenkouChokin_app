@@ -7,7 +7,7 @@
       <div class="row">
         <% if @bookmark_posts.present? %>
           <%= render @bookmark_posts %>
-          <div class="ms-auto">
+          <div class="d-flex justify-content-end">
             <%= paginate @bookmark_posts, theme: 'bootstrap-5' %>
           </div>
         <% else %>
