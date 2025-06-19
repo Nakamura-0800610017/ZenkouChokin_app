@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      auto_login(@user)
       redirect_to root_path, success: t("default.flash_message.created", item: User.model_name.human)
     else
       flash.now[:danger] = t("default.flash_message.not_created", item: User.model_name.human)
