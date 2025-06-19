@@ -1,0 +1,29 @@
+<% @user_points.each_with_index do |user_point, index| %>
+  <div class="col-4 m-1">
+    <div class="card mb-3">
+      <div class="card-body d-flex align-items-center">
+        <span class="badge me-2 <%= 
+                            if index == 0
+                              "badge-first"
+                            elsif index == 1
+                              "badge-second"
+                            elsif index == 2
+                              "badge-third"
+                            else
+                              "badge-default"
+                            end %>">
+          <%= index + 1 %> 位</span>
+        </span>
+        <div class="me-2">
+          <%= image_tag "#{user_point.user_rank}.png", alt: t("default.user_rank.#{user_point.user_rank}"),
+                height: 80,class: "d-block" %>
+        </div>
+        <div class="user-info">
+          <h4 class="card-title"><%= user_point.user.user_name %></h4>
+          <p class="card-text"><%= t("user_points.index.user_rank") %>: <%= t("default.user_rank.#{user_point.user_rank}") %>
+            <br><%= t("user_points.index.total_points") %>: <%= user_point.total_points.round %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
