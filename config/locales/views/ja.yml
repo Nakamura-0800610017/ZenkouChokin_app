@@ -65,7 +65,7 @@ ja:
     login: ログイン
     logout: ログアウト
     how_to: 使い方(未実装)
-    ranking: ランキング(未実装)
+    ranking: ランキング
     post: 投稿
     my_page: マイページ
     post_zenkou: 『善行』を投稿する
@@ -85,3 +85,7 @@ ja:
       title: 投稿を編集
       update: 更新
       delete: 削除
+  user_points:
+    index:
+      user_rank: ユーザーランク
+      total_points: 善行ポイント
