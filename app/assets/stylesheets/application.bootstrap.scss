@@ -28,3 +28,28 @@
 .pagination .page-item .page-link:hover {
   border-radius: 15px;
 }
+
+.badge {
+  font-size: 1.25rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.badge-first {
+  background-color: gold;
+  color: white;
+}
+
+.badge-second {
+  background-color: silver;
+  color: white;
+}
+
+.badge-third {
+  background-color: #cd7f32;
+  color: white;
+}
+
+.badge-default {
+  background-color: #007bff;
+  color: white;
+}
