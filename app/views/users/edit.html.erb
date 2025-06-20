@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-10 col-lg-5 mx-auto">
       <h1><%= t('users.edit.title') %></h1>
+        <%= render 'shared/error_messages', object: @user %>
         <%= form_with model: @user, class: "edit_user" do |f| %>
           <div class="mb-3">
             <%= f.label :user_name, class: "form-label" %>
