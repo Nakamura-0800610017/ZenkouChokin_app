@@ -6,7 +6,7 @@
           <%= link_to t('footer.privacy_policy'), '#', class: "nav-link" %>
         </li>
         <li class="nav-item px-4">
-          <%= link_to t('footer.contact'), '#', class: "nav-link" %>
+          <%= mail_to 'zenkouchokin.official@gmail.com', 'お問い合わせ', :encode => 'hex',  class: "nav-link" %>
         </li>
       </ul>
     </div>
