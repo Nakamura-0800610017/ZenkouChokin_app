@@ -73,7 +73,7 @@ ja:
     bookmarks: ブックマーク一覧
   footer:
     privacy_policy: プライバシーポリシー(未実装)
-    contact: お問い合わせ(未実装)
+    contact: お問い合わせ
   posts:
     new:
       title: 『行い』を投稿
