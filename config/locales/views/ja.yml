@@ -64,7 +64,7 @@ ja:
   header:
     login: ログイン
     logout: ログアウト
-    how_to: 使い方(未実装)
+    how_to: 使い方
     ranking: ランキング
     post: 投稿
     my_page: マイページ
@@ -72,7 +72,7 @@ ja:
     post_akugyou: 『悪行』を投稿する
     bookmarks: ブックマーク一覧
   footer:
-    privacy_policy: プライバシーポリシー(未実装)
+    privacy_policy: プライバシーポリシー
     contact: お問い合わせ
   posts:
     new:
@@ -89,3 +89,6 @@ ja:
     index:
       user_rank: ユーザーランク
       total_points: 善行ポイント
+  modal:
+    close: 閉じる
+    new_registration: 新規登録ページへ
