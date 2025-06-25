@@ -1,0 +1,30 @@
+<div class="modal fade" id="modal_how_to" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title"><%= t('header.how_to') %></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h4>投稿を見る</h4>
+          <p>他のユーザーが投稿した『善行』を見る</p>
+        <h4>投稿する</h4>
+          <p>新規ユーザー登録を行い、ログインすると投稿ができるようになる
+          <br>自分の生活の中の『善行』と『悪行』を投稿しよう</p>
+        <h4>ブックマークする</h4>
+          <p>他のユーザーが投稿した善行は積極的にブックマークしましょう。
+          <br>自分の投稿がブックマークされることでも自分の『善行ポイント』が少しずつ増えていきます</p>
+        <h4>貯める</h4>
+          <p>善行を投稿すると自分の『善行ポイント』が増え、『悪行』の投稿では減ります
+          <br>なるべく善行を多く行いポイントを貯めていきましょう</p>
+        <h4>ランクを上げる</h4>
+          <p>『善行ポイント』が一定数を上回るとユーザーランクが上昇します
+          <br>最高ランクの「大仏」を目指して投稿しましょう！</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t('modal.close') %></button>
+        <%= link_to t('modal.new_registration'),  new_user_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
