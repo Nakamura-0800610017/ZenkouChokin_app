@@ -20,9 +20,24 @@
           <%= f.label :password_confirmation, class: "form-label" %>
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
-        <div class="d-flex flex-column w-75 mx-auto gap-2">
-          <%= f.submit t('users.new.create'), class: "btn btn-primary" %>
-          <%= link_to t('users.new.to_login_page'),  login_path, class: "btn btn-primary" %>
+        <div data-controller="terms" class="mb-3">
+          <div class="form-check">
+            <%= f.check_box :terms_of_service,
+              class: "form-check-input",
+              id: "user_terms_of_service",
+              data: { "terms-target": "checkbox", action: "change->terms#toggle" } %>
+            <%= f.label :terms_of_service, class: "form-check-label", for: "user_terms_of_service" do %>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modal_terms">利用規約</a>
+                に同意する
+            <% end %>
+          </div>
+          <div class="d-flex flex-column w-75 mx-auto gap-2 mt-3">
+            <%= f.submit t('users.new.create'),
+              class: "btn btn-secondary",
+              disabled: true,
+              data: { "terms-target": "submit" } %>
+            <%= link_to t('users.new.to_login_page'), login_path, class: "btn btn-outline-secondary" %>
+          </div>
         </div>
       <% end %>
     </div>
