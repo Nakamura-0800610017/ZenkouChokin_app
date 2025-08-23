@@ -12,6 +12,9 @@
       </div>
       <% if current_user&.own?(post) %>
         <div class="ms-auto p-1">
+          <%= link_to "https://twitter.com/share?url=https://zenkouchokin-app.onrender.com/&text=【今日の善行】%0a#{post.body}%0a", target: '_blank', data: { toggle: "tooltip", placement: "bottom" }, title: "Xでシェア" do %>
+            <i class="bi bi-twitter-x"></i>
+          <% end %>
           <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
             <i class="bi bi-pencil-fill"></i>
           <% end %>
