@@ -14,7 +14,7 @@
         <div class="d-flex flex-column w-75 mx-auto gap-2">
           <%= f.submit t('user_sessions.new.login'), class: "btn btn-primary" %>
           <%= link_to t('user_sessions.new.to_register_page'),  new_user_path, class: "btn btn-primary" %>
-          <%= link_to t('user_sessions.new.password_forget'),  '#', class: "btn btn-primary" %>
+          <%= link_to t('user_sessions.new.password_forget'),  new_password_reset_path, class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
