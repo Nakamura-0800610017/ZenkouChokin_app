@@ -51,8 +51,11 @@ gem "bootstrap5-kaminari-views"
 # メタタグ管理
 gem "meta-tags"
 
-#定数管理
+# 定数管理
 gem "config", "5.6.1"
+
+# 環境定数管理
+gem "dotenv-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
