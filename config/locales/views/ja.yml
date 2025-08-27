@@ -32,6 +32,7 @@ ja:
       myouou: 明王
       bosatsu: 菩薩
       daibutu: 大仏
+    passwore_reset: パスワードの変更について
   user_sessions:
     create:
       success: ログインしました
@@ -93,3 +94,14 @@ ja:
   modal:
     close: 閉じる
     new_registration: 新規登録ページへ
+  password_resets:
+    create:
+      success: パスワードリセットメールを送信しました
+    update:
+      success: パスワードの更新に成功しました
+    new:
+      title: パスワードリセット申請
+      submit: 申請
+    edit:
+      title: パスワード変更
+      submit: 変更

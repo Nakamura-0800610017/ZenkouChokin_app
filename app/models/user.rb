@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :terms_of_service, acceptance: true, on: :create
+  validates :reset_password_token, uniqueness: true, allow_nil: true
 
   has_many :posts, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
