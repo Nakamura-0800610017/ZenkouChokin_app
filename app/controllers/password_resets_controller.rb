@@ -6,7 +6,7 @@ class PasswordResetsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
     @user&.deliver_reset_password_instructions!
-    redirect_to login_path, success: t('password_resets.create.success')
+    redirect_to login_path, success: t("password_resets.create.success")
   end
 
   def edit
@@ -23,9 +23,9 @@ class PasswordResetsController < ApplicationController
 
     @user.password_confirmation = params[:user][:password_confirmation]
     if @user.change_password(params[:user][:password])
-      redirect_to login_path, success: t('password_resets.update.success')
+      redirect_to login_path, success: t("password_resets.update.success")
     else
-      render action: 'edit'
+      render :edit, status: :unprocessable_entity
     end
   end
 end
