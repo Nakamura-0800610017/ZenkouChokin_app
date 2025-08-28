@@ -17,6 +17,7 @@ ja:
       not_created: "%{item}の作成に失敗しました"
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
+      mode_block: 集中モードのため表示できないページです
     search:
       word: 本文
       period_start: 投稿期間（開始）
@@ -32,7 +33,10 @@ ja:
       myouou: 明王
       bosatsu: 菩薩
       daibutu: 大仏
-    passwore_reset: パスワードの変更について
+    password_reset: パスワードの変更について
+    mode:
+      normal: 通常モード
+      focus: 集中モード
   user_sessions:
     create:
       success: ログインしました
@@ -53,6 +57,7 @@ ja:
       title: ユーザー編集
       update: 更新
       delete: アカウント削除
+      mode: モード選択
     show:
       title: マイページ
       user_rank: ユーザーランク
@@ -87,6 +92,8 @@ ja:
       title: 投稿を編集
       update: 更新
       delete: 削除
+    focus:
+      mode_change: 通常モードに変更する
   user_points:
     index:
       user_rank: ユーザーランク
