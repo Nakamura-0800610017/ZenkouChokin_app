@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: [ :index ]
+  before_action :block_focus_mode, only:[ :bookmarks ]
+
   def index
+    if current_user&.focus?
+      render :focus_mode
+      return
+    end
     @q = Post.includes(:user).where(post_type: :zenkou).ransack(params[:q])
     @posts = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
