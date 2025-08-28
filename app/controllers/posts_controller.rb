@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: [ :index ]
-  before_action :block_focus_mode, only:[ :bookmarks ]
+  before_action :block_focus_mode, only: [ :bookmarks ]
 
   def index
     if current_user&.focus?
