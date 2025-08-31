@@ -27,4 +27,12 @@ Rails.application.routes.draw do
   delete "logout", to: "user_sessions#destroy"
   resources :user_points, only: %i[index]
   resources :password_resets, only: %i[new create edit update]
+
+  namespace :admin do
+    root "posts#index"
+    resource :posts, only: %i[index]
+    get "login" => "user_sessions#new", :as => :login
+    post "login" => "user_sessions#create"
+    delete "logout" => "ser_sessions#destroy", :as => :logout
+  end
 end

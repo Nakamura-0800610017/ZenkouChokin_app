@@ -1,0 +1,19 @@
+<header>
+  <nav class="app-header px-4">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="mf-auto">
+        <%= image_tag 'main_image.png', width: 153 %>
+        <span class="ms-2 lead fw-bold">
+          ~管理画面~
+        </span>
+      </div>
+      <div class="ms-auto fw-bold">
+        <ul class="navbar-nav" style="flex-direction: row;">
+          <li class="nav-item px-2">
+            <%= button_to t('header.logout'), admin_logout_path, method: :delete, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </nav>
+</header>

@@ -1,8 +1,8 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: "善行貯金",
-      title: "~日常を見直す習慣管理アプリ~",
+      site: "~日常を見直す習慣管理アプリ~",
+      title: "善行貯金",
       reverse: true,
       separator: "|",
       description: "「良いこと」を貯めて、良いことをできなかったときの自分を許しやすくするサービス",
@@ -14,8 +14,8 @@ module ApplicationHelper
         { href: image_url("apple-touch-icon.png"), rel: "apple-touch-icon", sizes: "180x180" }
       ],
       og: {
-        site_name: "善行貯金",
-        title: "~日常を見直す習慣管理アプリ~",
+        site_name: "~日常を見直す習慣管理アプリ~",
+        title: "善行貯金",
         description: "「良いこと」を貯めて、良いことをできなかったときの自分を許しやすくするサービス",
         type: "website",
         url: request.original_url,

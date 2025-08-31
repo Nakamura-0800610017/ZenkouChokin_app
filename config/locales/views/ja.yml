@@ -18,6 +18,7 @@ ja:
       deleted: "%{item}を削除しました"
       require_login: ログインしてください
       mode_block: 集中モードのため表示できないページです
+      not_authorized: 管理者限定のため利用不可です
     search:
       word: 本文
       period_start: 投稿期間（開始）
@@ -112,3 +113,12 @@ ja:
     edit:
       title: パスワード変更
       submit: 変更
+  admin_login:
+    title: 管理者ログイン
+  admin:
+    user_sessions:
+      create:
+        success: 管理者としてログインしました
+        failed: ログインに失敗しました
+      destroy:
+        success: ログアウトしました

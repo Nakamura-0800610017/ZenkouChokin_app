@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= "管理画面" || "善行貯金" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet "href="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0-rc3/dist/css/adminlte.min.css" crossorigin="anonymous"/>
+    <%= javascript_importmap_tags %>
+    <%= display_meta_tags(default_meta_tags) %>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <div class="app-wrapper">
+      <%= render 'admin/shared/header' %>
+      <%= render 'admin/shared/sidebar' %>
+      <div class="row">
+        <main class="app-main col-md-9 ms-sm-auto col-lg-10">
+
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>">
+              <%= message %>
+            </div>
+          <% end %>
+
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@4.0.0-rc3/dist/js/adminlte.min.js" crossorigin="anonymous" ></script>
+  </body>
+</html>
