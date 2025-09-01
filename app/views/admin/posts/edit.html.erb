@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-5 mx-auto mt-3">
+      <h1><%= t('posts.edit.title') %></h1>
+        <%= render 'shared/error_messages', object: @post %>
+        <%= form_with model: @post, url: admin_post_path(@post), class: "new_post" do |f| %>
+          <div class="mb-3">
+            <%= f.label :post_type, class: "form-label" %>
+            <%= f.select :post_type, [["善行", "zenkou"], ["悪行", "akugyou"]],
+                    class: "form-select" %> 
+          </div>
+          <div class="mb-3">
+            <%= f.label :body, class: "form-label" %>
+            <%= f.text_area :body, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :point, class: "form-label" %>
+            <%= f.select :point, (-10..10).to_a, class: "form-select" %>
+          </div>
+          <div class="d-flex gap-2">
+            <%= f.submit t('posts.edit.update'), class: "btn btn-primary ms-auto" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
