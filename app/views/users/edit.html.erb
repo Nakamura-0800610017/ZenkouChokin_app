@@ -14,6 +14,10 @@
             <p>※集中モードは他のユーザーの投稿が見えなくなるモードです。自分の投稿は他ユーザーに公開されていますので、投稿内容には引き続きご注意ください。</p>          
           </div>
           <div class="mb-3">
+            <%= f.label :role, class: "form-label" %>
+            <%= f.select :role, [["通常", "general"], ["管理", "admin"]], class: "form-select" %>
+          </div>
+          <div class="mb-3">
             <%= f.label :email, class: "form-label" %>
             <%= f.email_field :email, class: "form-control" %>
           </div>
