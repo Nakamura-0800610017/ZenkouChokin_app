@@ -6,7 +6,10 @@
           <%= link_to t("admin.default.posts"), admin_root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to t("admin.default.famous_quotes"), admin_root_path , class: "nav-link" %>
+          <%= link_to t("admin.default.famous_quotes"), admin_famous_quotes_path , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t("admin.famous_quotes.new.title"), new_admin_famous_quote_path , class: "nav-link" %>
         </li>
       </ul>
     </nav>
