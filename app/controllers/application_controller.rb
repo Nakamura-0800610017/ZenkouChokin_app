@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   before_action :require_login
+  before_action :set_random_quote
   add_flash_types :success, :danger
 
   private
@@ -11,5 +12,9 @@ class ApplicationController < ActionController::Base
   def block_focus_mode
     return unless current_user&.focus?
     redirect_to user_path(current_user.id), danger: t("default.flash_message.mode_block"), status: :see_other
+  end
+
+  def set_random_quote
+    @famous_quote = FamousQuote.order(Arel.sql("RANDOM()")).first
   end
 end

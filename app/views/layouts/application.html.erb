@@ -31,10 +31,15 @@
       <div class="my-2 ms-4">
         <h2>今日の名言</h2>
       </div>
-      <div class="text-center">
-        <h4>きみは明日のきみに、今日を誇れるだろうか。</h4>
-        <h5>～あつまれどうぶつの森 らこすけ～</h5>
-      </div>
+      <% if @famous_quote.present? %>
+        <div class="container my-3 famous-quote">
+          <div class="alert border text-center">
+            <blockquote class="mb-1"><%= @famous_quote.content %></blockquote>
+            <small> — <%= @famous_quote.author %> — </small>
+          </div>
+        </div>
+      <% end %>
+
       <%= yield %>
     </main>
     

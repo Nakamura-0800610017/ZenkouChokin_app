@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-5 mx-auto mt-3">
+      <h1><%= t(".title") %></h1>
+        <%= render 'shared/error_messages', object: @famous_quote %>
+        <%= form_with model: @famous_quote, url: admin_famous_quote_path(@famous_quote), class: "new_famous_quote" do |f| %>
+          <div class="mb-3">
+            <%= f.label :content, class: "form-label" %>
+            <%= f.text_area :content, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :author, class: "form-label" %>
+            <%= f.text_field :author, class: "form-control" %>
+          </div>
+          <div class="d-flex gap-2">
+            <%= f.submit t("helpers.submit.update"), class: "btn btn-primary ms-auto" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
