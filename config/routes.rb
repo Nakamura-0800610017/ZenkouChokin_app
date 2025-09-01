@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "posts#index"
     resources :posts, only: %i[index edit update destroy]
+    resources :famous_quotes, only: %i[index new create edit update destroy]
     get "login" => "user_sessions#new", :as => :login
     post "login" => "user_sessions#create"
     delete "logout" => "user_sessions#destroy", :as => :logout
