@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_01_103231) do
   end
 
   create_table "famous_quotes", force: :cascade do |t|
-    t.string "content"
-    t.string "author"
+    t.string "content", null: false
+    t.string "author", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
