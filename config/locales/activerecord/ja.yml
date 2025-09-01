@@ -4,6 +4,7 @@ ja:
       user: ユーザー
       post: 投稿
       user_point: ユーザーポイント
+      famous_quote: 名言
     attributes:
       user:
         email: メールアドレス
@@ -28,3 +29,7 @@ ja:
           myouou: 明王
           bosatsu: 菩薩
           daibutsu: 大仏
+      famous_quote:
+        content: 本文
+        author: 人物
+

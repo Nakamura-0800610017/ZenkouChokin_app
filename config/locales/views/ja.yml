@@ -133,3 +133,13 @@ ja:
         point: 善行ポイント
         user: 作成ユーザー
         edit_destroy: 編集・削除
+    famous_quotes:
+      index:
+        title: 名言一覧
+        content: 本文
+        author: 人物
+        edit_destroy: 編集・削除
+      new:
+        title: 名言登録
+      edit:
+        title: 名言編集
