@@ -116,9 +116,20 @@ ja:
   admin_login:
     title: 管理者ログイン
   admin:
+    default:
+      posts: 投稿一覧
+      famous_quotes: 名言一覧
     user_sessions:
       create:
         success: 管理者としてログインしました
         failed: ログインに失敗しました
       destroy:
         success: ログアウトしました
+    posts:
+      index:
+        title: 投稿一覧
+        body: 本文
+        post_type: 投稿タイプ
+        point: 善行ポイント
+        user: 作成ユーザー
+        edit_destroy: 編集・削除

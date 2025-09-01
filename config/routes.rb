@@ -30,9 +30,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "posts#index"
-    resource :posts, only: %i[index]
+    resources :posts, only: %i[index edit update destroy]
     get "login" => "user_sessions#new", :as => :login
     post "login" => "user_sessions#create"
-    delete "logout" => "ser_sessions#destroy", :as => :logout
+    delete "logout" => "user_sessions#destroy", :as => :logout
   end
 end
