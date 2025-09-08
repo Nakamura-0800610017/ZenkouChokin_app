@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_03_092145) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_08_062210) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_03_092145) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", null: false
+    t.string "email"
     t.string "crypted_password"
     t.string "salt"
     t.string "user_name", null: false
@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_03_092145) do
     t.integer "access_count_to_reset_password_page", default: 0
     t.integer "mode", default: 0, null: false
     t.integer "role", default: 0, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, where: "(email IS NOT NULL)"
     t.index ["mode"], name: "index_users_on_mode"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
