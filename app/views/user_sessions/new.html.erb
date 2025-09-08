@@ -17,6 +17,9 @@
           <%= link_to t('user_sessions.new.password_forget'),  new_password_reset_path, class: "btn btn-primary" %>
         </div>
       <% end %>
+      <div class="d-flex align-items-center justify-content-center gap-2 mt-2 mx-auto">
+        <%= button_to t(".x_login"), auth_at_provider_path(provider: :twitter), method: :post, form:  { data: { turbo: false }, class: "w-100 text-center" }, class: "btn btn-dark w-75" %>
+      </div>
     </div>
   </div>
 </div>

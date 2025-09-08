@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   delete "logout", to: "user_sessions#destroy"
   resources :user_points, only: %i[index]
   resources :password_resets, only: %i[new create edit update]
+  post "oauth/callback", to: "oauths#callback"
+  get "oauth/callback", to: "oauths#callback"
+  post "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
 
   namespace :admin do
     root "posts#index"
