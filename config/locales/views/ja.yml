@@ -49,6 +49,7 @@ ja:
       login: ログイン
       to_register_page: 新規登録ページへ
       password_forget: パスワードを忘れた方
+      x_login: Xアカウントでログイン
   users:
     new:
       title: 新規登録
@@ -143,3 +144,7 @@ ja:
         title: 名言登録
       edit:
         title: 名言編集
+  oauths:
+    login:
+      success: Xアカウントでログインしました
+      failed: Xアカウントでのログインに失敗しました
