@@ -117,7 +117,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.twitter.key = ENV["TWITTER_API_KEY"]
   config.twitter.secret = ENV["TWITTER_API_SECRET"]
-  config.twitter.callback_url = "https://zenkouchokin-app.onrender.com/oauth/callback?provider=twitter"
+  config.twitter.callback_url = "https://zenkouchokin.com/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {
     user_name: "screen_name"
   }
