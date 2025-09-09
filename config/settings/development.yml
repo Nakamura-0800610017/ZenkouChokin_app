@@ -1,2 +1,2 @@
 default_url_options:
-  host: 'localhost:3000'
+  host: '127.0.0.1:3000'
