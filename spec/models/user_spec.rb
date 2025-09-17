@@ -56,7 +56,7 @@ RSpec.describe User, type: :model do
   end
   describe "外部認証を利用する" do
     it "外部認証ユーザーはuser_nameだけで作成できる" do
-      user = User.new(user_name: "oauth_user", authentications_attributes: [{ provider: "twitter", uid: "uid_#{SecureRandom.hex(6)}" }])
+      user = User.new(user_name: "oauth_user", authentications_attributes: [ { provider: "twitter", uid: "uid_#{SecureRandom.hex(6)}" } ])
       expect(user).to be_valid
     end
   end
