@@ -8,6 +8,5 @@ FactoryBot.define do
       total_points { 25 }
       user_rank { :danka }
     end
-
   end
 end
