@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
     association :user
-    body { Faker::String.random(length: 50) }
+    body { Faker::Alphanumeric.alphanumeric(number: 50) }
     point { Faker::Number.between(from: 1, to: 10) }
     post_type { :zenkou }
 
