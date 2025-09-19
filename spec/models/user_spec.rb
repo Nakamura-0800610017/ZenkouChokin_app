@@ -65,7 +65,7 @@ RSpec.describe User, type: :model do
       user = create(:user)
       expect(user.user_point).to be_present
       expect(user.user_point.total_points).to eq(0)
-      expect(user.user_point.user_rank).to eq("nomal")
+      expect(user.user_point.user_rank).to eq("normal")
     end
     it "ユーザー作成時、modeとroleがデフォルト値である" do
       user = User.new(user_name: "user_name", email: "test@example.com", password: "password", password_confirmation: "password", terms_of_service: true)
