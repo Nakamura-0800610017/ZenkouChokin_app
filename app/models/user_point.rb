@@ -1,5 +1,5 @@
 class UserPoint < ApplicationRecord
-  enum user_rank: { nomal: 0, danka: 1, syugyousou: 2, souryo: 3, ajyari: 4, arakan: 5,
+  enum :user_rank, { normal: 0, danka: 1, syugyousou: 2, souryo: 3, ajyari: 4, arakan: 5,
                     ten: 6, myouou: 7, bosatu: 8, daibutu: 9 }
 
   belongs_to :user
@@ -23,6 +23,6 @@ class UserPoint < ApplicationRecord
         return
       end
     end
-    self.user_rank = :nomal
+    self.user_rank = :normal
   end
 end

@@ -27,7 +27,8 @@ module ZenkouChokinApp
     config.generators do |g|
       g.skip_routes true
       g.helper false
-      g.test_framework nil
+      g.test_framework :rspec, fixtures: true
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
     config.i18n.default_locale = :ja

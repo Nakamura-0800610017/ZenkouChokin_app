@@ -10,8 +10,8 @@ class User < ApplicationRecord
   end
 
   validates :reset_password_token, uniqueness: true, allow_nil: true
-  enum mode: { normal: 0, focus: 1 }
-  enum role: { general: 0, admin: 1 }
+  enum :mode, { normal: 0, focus: 1 }
+  enum :role, { general: 0, admin: 1 }
 
 
   has_many :posts, dependent: :destroy
