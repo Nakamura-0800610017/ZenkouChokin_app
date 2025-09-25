@@ -42,7 +42,7 @@ gem "sorcery", "0.17.0"
 gem "rails-i18n", "~> 7.0", ">= 7.0.10"
 
 # 検索機能
-gem "ransack", "~> 4.3"
+gem "ransack", "~> 4.4"
 
 # ページネーション
 gem "kaminari", "1.2.2"
