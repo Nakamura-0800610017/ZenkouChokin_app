@@ -24,7 +24,7 @@ RSpec.describe 'ユーザー登録', type: :system, js: true do
         click_button '新規登録'
         Capybara.assert_current_path("/", ignore_query: true)
       }.to change { User.count }.by(1)
-      expect(page).to have_content('ユーザーを作成しました'), 'フラッシュメッセージ「ユーザーを作成しました」が表示されていません'
+      expect(page).to have_content('ユーザーを作成しました')
     end
   end
 
@@ -36,9 +36,9 @@ RSpec.describe 'ユーザー登録', type: :system, js: true do
         find('#user_terms_of_service').click
         click_button '新規登録'
       }.to change { User.count }.by(0)
-      expect(page).to have_content('ユーザーの作成に失敗しました'), 'フラッシュメッセージ「ユーザーの作成に失敗しました」が表示されていません'
-      expect(page).to have_content('ユーザーネームを入力してください'), 'フラッシュメッセージ「ユーザーネームを入力してください」が表示されていません'
-      expect(page).to have_content('パスワードは6文字以上で入力してください'), 'フラッシュメッセージ「パスワードは3文字以上で入力してください」が表示されていません'
+      expect(page).to have_content('ユーザーの作成に失敗しました')
+      expect(page).to have_content('ユーザーネームを入力してください')
+      expect(page).to have_content('パスワードは6文字以上で入力してください')
     end
   end
 end
