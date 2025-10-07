@@ -29,11 +29,18 @@ services:
       - node_modules:/ZenkouChokin_app/node_modules
     environment:
       TZ: Asia/Tokyo
+      SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
+      CAPYBARA_SERVER_HOST: 0.0.0.0
+      CAPYBARA_APP_HOST: http://web:3001
     ports:
       - "3000:3000"
     depends_on:
       db:
         condition: service_healthy
+  selenium_chrome:
+    image: selenium/standalone-chromium:latest
+    ports:
+      - '4444:4444'
 
 volumes:
   bundle_data:
