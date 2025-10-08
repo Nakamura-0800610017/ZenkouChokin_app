@@ -4,10 +4,11 @@ class User < ApplicationRecord
 
   with_options if: :using_local_password? do
     validates :email, presence: true, uniqueness: true
-    validates :password, presence: true, length: { in: 6..18 }, confirmation: true
-    validates :password_confirmation, presence: true
     validates :terms_of_service, acceptance: true, on: :create
   end
+
+  validates :password, presence: true, length: { in: 6..18 }, confirmation: true, if: :password_required?
+  validates :password_confirmation, presence: true, if: :password_required?
 
   validates :reset_password_token, uniqueness: true, allow_nil: true
   enum :mode, { normal: 0, focus: 1 }
@@ -45,5 +46,9 @@ class User < ApplicationRecord
 
   def using_local_password?
     authentications.blank?
+  end
+
+  def password_required?
+    using_local_password? && (new_record? || password.present?)
   end
 end
