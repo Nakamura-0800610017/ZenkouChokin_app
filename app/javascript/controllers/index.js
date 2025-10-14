@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import TermsController from "controllers/terms_controller"
 application.register("terms", TermsController)
+
+import PostPointsController from "controllers/post_points_controller"
+application.register("post-points", PostPointsController)
