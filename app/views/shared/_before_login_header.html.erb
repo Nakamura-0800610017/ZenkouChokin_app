@@ -1,30 +1,28 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light custom-header px-4">
-    <div class="mf-auto">
-      <%= link_to '/', class: 'navbar-brand ms-auto' do %>
-        <%= image_tag 'main_image.png', width: 153 %>
+<header class="custom-header navbar">
+  <div class="d-flex align-items-center justify-content-between w-100 px-2">
+    <div class="d-flex align-items-center">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "main_image.png", width: 153 %>
       <% end %>
-      <span class="ms-2 lead fw-bold">
-        ~日常を見直す週間管理アプリ~
-      </span>
+      <span class="ms-2 lead fw-bold">~日常を見直す週間管理アプリ~</span>
     </div>
-    <div class="ms-auto fw-bold">
-      <ul class="navbar-nav" style="flex-direction: row;">
-        <li class="nav-item px-2">
-          <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal_how_to">
+
+    <div class="dropdown">
+      <button class="btn navbar-toggler p-2" type="button"
+              data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal_how_to">
             <%= t('header.how_to') %>
           </button>
         </li>
-        <li class="nav-item px-2">
-          <%= link_to t('header.ranking'), user_points_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item px-2">
-          <%= link_to t('header.post'), new_post_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item px-2">
-          <%= link_to t('header.login'), login_path, class: "nav-link" %>
-        </li>
+        <li><%= link_to t('header.ranking'), user_points_path, class: "dropdown-item" %></li>
+        <li><%= link_to t('header.post_index'), posts_path, class: "dropdown-item" %></li>
+        <li><%= link_to t('header.post'), new_post_path, class: "dropdown-item" %></li>
+        <li><%= link_to t('header.login'), login_path, class: "dropdown-item" %></li>
       </ul>
     </div>
-  </nav>
+  </div>
 </header>

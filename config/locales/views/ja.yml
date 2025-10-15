@@ -69,15 +69,16 @@ ja:
       body: 本文
       point: 善行ポイント
       edit_destroy: 編集・削除
+  top:
+    post: 『行い』を捧げる
   header:
     login: ログイン
     logout: ログアウト
     how_to: 使い方
     ranking: ランキング
-    post: 投稿
+    post: 『行い』を捧げる
+    post_index: 『行い』一覧
     my_page: マイページ
-    post_zenkou: 『善行』を投稿する
-    post_akugyou: 『悪行』を投稿する
     bookmarks: ブックマーク一覧
   footer:
     privacy_policy: プライバシーポリシー
@@ -85,13 +86,13 @@ ja:
     terms_of_service: 利用規約
   posts:
     new:
-      title: 『行い』を投稿
+      title: 『行い』を捧げる
       body: 本文
       post_type: 種類
       point: 善行ポイント
-      post: 投稿
+      post: 捧げる
     edit:
-      title: 投稿を編集
+      title: 『行い』を編集
       update: 更新
       delete: 削除
     focus:
@@ -128,7 +129,7 @@ ja:
         success: ログアウトしました
     posts:
       index:
-        title: 投稿一覧
+        title: 『行い』一覧
         body: 本文
         post_type: 投稿タイプ
         point: 善行ポイント

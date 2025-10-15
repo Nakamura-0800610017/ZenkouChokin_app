@@ -11,15 +11,9 @@ class PostsController < ApplicationController
     @posts = @q.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
 
-def new_zenkou
-  @post = Post.new(post_type: :zenkou)
-  render :new
-end
-
-def new_akugyou
-  @post = Post.new(post_type: :akugyou)
-  render :new
-end
+  def new
+    @post = Post.new
+  end
 
   def create
     @post = current_user.posts.build(post_params)
