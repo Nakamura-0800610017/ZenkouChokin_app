@@ -1,13 +1,16 @@
-<% if current_user.present? %>
-  <div class='ms-auto'>
+<div id="<%= "bookmark-button-#{post.id}" %>" class="ms-auto p-2">
+  <% if current_user.present? %>
     <% if current_user.bookmark?(post) %>
-      <%= render 'unbookmark', { post: post } %>
+      <%= render 'posts/unbookmark', { post: post } %>
     <% else %>
-      <%= render 'bookmark', { post: post } %>
+      <%= render 'posts/bookmark', { post: post } %>
     <% end %>
-  </div>
-<% else %>
-  <div class='ms-auto'>
-    <i class="bi bi-hand-thumbs-up"></i>
-  </div>
-<% end %>
+  <% else %>
+    <% bookmark = Bookmark.find_by(session_id: session[:bookmark_session_id], post: post) %>
+    <% if bookmark.present? %>
+      <%= render 'posts/unbookmark_guest', post: post, bookmark: bookmark %>
+    <% else %>
+      <%= render 'posts/bookmark_guest', post: post %>
+    <% end %>
+  <% end %>
+</div>
