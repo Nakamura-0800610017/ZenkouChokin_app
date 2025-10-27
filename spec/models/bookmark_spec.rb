@@ -2,15 +2,34 @@ require 'rails_helper'
 
 RSpec.describe Bookmark, type: :model do
   describe "レコード作成" do
-    it "ユーザーとポストの組み合わせが一意だと作成できる" do
-      bookmark = build(:bookmark)
-      expect(bookmark).to be_valid
+    context "ログインユーザーの場合" do
+      let(:user) { create(:user) }
+      let(:post) { create(:post) }
+      it "ユーザーとポストの組み合わせが一意だと作成できる" do
+        bookmark = build(:bookmark, user: user, post: post, session_id: nil)
+        expect(bookmark).to be_valid
+      end
+      it "ユーザーとポストの組み合わせが一意じゃないと作成できない" do
+        bookmark = create(:bookmark, user: user, post: post, session_id: nil)
+        new_bookmark = build(:bookmark, user: user, post: post, session_id: nil)
+        new_bookmark.valid?
+        expect(new_bookmark.errors[:post_id]).to include("はすでに存在します")
+      end
     end
-    it "ユーザーとポストの組み合わせが一意じゃないと作成できない" do
-      bookmark = create(:bookmark)
-      new_bookmark = build(:bookmark, user: bookmark.user, post: bookmark.post)
-      new_bookmark.valid?
-      expect(new_bookmark.errors[:user_id]).to include("はすでに存在します")
+
+    context "ゲスト（session_id）の場合" do
+      let(:session_id) {SecureRandom.uuid}
+      let(:post) { create(:post) }
+      it "session_idとポストの組み合わせが一意だと作成できる" do
+        bookmark = build(:bookmark, :guest, session_id: session_id, post: post)
+        expect(bookmark).to be_valid
+      end
+      it "同一のsession_idとポストの組み合わせは作成できない" do
+        bookmark = create(:bookmark, :guest, session_id: session_id, post: post)
+        new_bookmark = build(:bookmark, :guest, session_id: session_id, post: post)
+        new_bookmark.valid?
+        expect(new_bookmark.errors[:post_id]).to include("はすでに存在します")
+      end
     end
   end
   describe "ボーナスポイント" do
