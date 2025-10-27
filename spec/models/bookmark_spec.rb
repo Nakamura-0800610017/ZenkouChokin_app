@@ -18,7 +18,7 @@ RSpec.describe Bookmark, type: :model do
     end
 
     context "ゲスト（session_id）の場合" do
-      let(:session_id) {SecureRandom.uuid}
+      let(:session_id) { SecureRandom.uuid }
       let(:post) { create(:post) }
       it "session_idとポストの組み合わせが一意だと作成できる" do
         bookmark = build(:bookmark, :guest, session_id: session_id, post: post)
