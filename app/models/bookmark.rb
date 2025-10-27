@@ -4,6 +4,8 @@ class Bookmark < ApplicationRecord
 
   validates :post_id, presence: true
   validate :user_or_session_present
+  validates :post_id, uniqueness: { scope: :user_id }, if: -> { user_id.present? }
+  validates :post_id, uniqueness: { scope: :session_id }, if: -> { session_id.present? }
 
   after_create :update_bookmark_bonus
   after_destroy :update_bookmark_bonus
