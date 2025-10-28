@@ -35,7 +35,7 @@ RSpec.describe '管理画面/投稿', type: :system do
         expect(page).to have_content("変更後本文")
       end
     end
-    describe "投稿削除" , js: true do
+    describe "投稿削除", js: true do
       it "投稿を削除できること" do
         accept_confirm { find("#button-delete-#{post1.id}").click }
         expect(page).to have_content("投稿を削除しました")
