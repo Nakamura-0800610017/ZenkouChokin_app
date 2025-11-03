@@ -1,73 +1,84 @@
 <div class="container">
   <div class="text-center">
     <h1><%= t('users.show.title') %></h1>
-    <%= image_tag "#{@user_point.user_rank}.png", alt: t("default.user_rank.#{@user_point.user_rank}"), height: 300,weight: 300,class: "mx-auto d-block mb-4" %>
-    <div class="d-flex justify-content-center align-items-center gap-1 mb-3">
-      <h3 class="mb-0"><%= @user.user_name %></h3>
-      <%= link_to edit_user_path(@user) do %>
-        <i class="bi bi-pencil-fill"></i>
-      <% end %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= image_tag "#{@user_point.user_rank}.png", alt: t("default.user_rank.#{@user_point.user_rank}"), 
+                      height: 300,weight: 300,class: "mx-auto d-block mb-4" %>
+        <div class="d-flex justify-content-center align-items-center gap-1 mb-3">
+          <h3 class="mb-0"><%= @user.user_name %></h3>
+          <%= link_to edit_user_path(@user) do %>
+            <i class="bi bi-pencil-fill"></i>
+          <% end %>
+        </div>
+        <h3><%= t("users.show.user_rank") %>:<%= t("default.user_rank.#{@user_point.user_rank}") %></h3>
+      </div>
+      <div class="col-md-6">
+        <h3>善行・悪行バランスグラフ</h3>
+        <%= pie_chart @pie_data, colors:["#e6b422", "#332808"], width: 300, donut: true,
+                      loading: "Loading...", empty: "ポイントがありません" %>
+        <h3><%= t("users.show.total_points") %>:<%= @total_points %></h3>
+      </div>
     </div>
-    <h3><%= t("users.show.user_rank") %>:<%= t("default.user_rank.#{@user_point.user_rank}") %></h3>
-    <h3><%= t("users.show.total_points") %>:<%= @total_points %></h3>
   </div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h4 class="text-center"><%= t("users.show.zenkou") %></h4>
-      <table class="table table-bordered table-striped table-sm">
-        <thead>
-          <tr>
-            <th><%= t("users.show.body") %></th>
-            <th><%= t("users.show.point") %></th>
-            <th><%= t("users.show.edit_destroy") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @zenkou.each do |post| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4 class="text-center"><%= t("users.show.zenkou") %></h4>
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
             <tr>
-              <td class="text-truncate" style="max-width: 300px;"><%= post.body %></td>
-              <td><%= post.point %></td>
-              <td>
-                <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
-                  <i class="bi bi-pencil-fill"></i>
-                <% end %>
-                <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') } do %>
-                  <i class="bi bi-trash-fill"></i>
-                <% end %>
-              </td>
+              <th><%= t("users.show.body") %></th>
+              <th><%= t("users.show.point") %></th>
+              <th><%= t("users.show.edit_destroy") %></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-6">
-      <h4 class="text-center"><%= t("users.show.akugyou") %></h4>
-      <table class="table table-bordered table-striped table-sm">
-        <thead>
-          <tr>
-            <th><%= t("users.show.body") %></th>
-            <th><%= t("users.show.point") %></th>
-            <th><%= t("users.show.edit_destroy") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @akugyou.each do |post| %>
+          </thead>
+          <tbody>
+            <% @zenkou.each do |post| %>
+              <tr>
+                <td class="text-truncate" style="max-width: 300px;"><%= post.body %></td>
+                <td><%= post.point %></td>
+                <td>
+                  <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
+                    <i class="bi bi-pencil-fill"></i>
+                  <% end %>
+                  <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') } do %>
+                    <i class="bi bi-trash-fill"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-center"><%= t("users.show.akugyou") %></h4>
+        <table class="table table-bordered table-striped table-sm">
+          <thead>
             <tr>
-              <td class="text-truncate" style="max-width: 300px;"><%= post.body %></td>
-              <td><%= post.point %></td>
-              <td>
-                <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
-                  <i class="bi bi-pencil-fill"></i>
-                <% end %>
-                <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') } do %>
-                  <i class="bi bi-trash-fill"></i>
-                <% end %>
-              </td>
+              <th><%= t("users.show.body") %></th>
+              <th><%= t("users.show.point") %></th>
+              <th><%= t("users.show.edit_destroy") %></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            <% @akugyou.each do |post| %>
+              <tr>
+                <td class="text-truncate" style="max-width: 300px;"><%= post.body %></td>
+                <td><%= post.point %></td>
+                <td>
+                  <%= link_to edit_post_path(post), id: "button-edit-#{post.id}" do %>
+                    <i class="bi bi-pencil-fill"></i>
+                  <% end %>
+                  <%= link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('default.delete_confirm') } do %>
+                    <i class="bi bi-trash-fill"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
