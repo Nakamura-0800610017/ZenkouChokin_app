@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @akugyou = @user.posts.akugyou.order(created_at: :desc)
     @good_points = @zenkou.sum(:point)
     @bad_points = -@akugyou.sum(:point)
-    @pie_data = [["善行", @good_points], ["悪行", @bad_points]]
+    @pie_data = [ [ "善行", @good_points ],  [ "悪行", @bad_points ] ]
   end
 
   def edit
